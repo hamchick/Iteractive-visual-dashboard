@@ -1,0 +1,49 @@
+createExamplePatterns <- function(generate_new_data=F, L=1500,
+                                  folder_path='data/periodic patterns/'){
+  suppressPackageStartupMessages(library('numbers')) # mod() function
+  
+  paths <- paste0(folder_path, c("sin1.txt", 
+                                 "sin2.txt",
+                                 "5periodic1.txt",
+                                 "5periodic2.txt"))
+  
+  if(generate_new_data){
+    ### sin with period 2pi/8.83
+    sin1 <- matrix(sin(2*pi*(1:L)/8.8342522),L,1)
+    write.table(sin1, file = paths[1], row.names=FALSE, col.names=FALSE)
+    
+    ### sin with period 2pi/9.93
+    sin2 <- matrix(sin(2*pi*(1:L)/9.8342522),L,1)
+    write.table(sin2, file = paths[2], row.names=FALSE, col.names=FALSE)
+    
+    ### 5-periodic pattern random points
+    random_points <- runif(5)
+    random_points <- 1.8*(random_points-min(random_points))/(max(random_points)-min(random_points))-0.9;
+    five_periodic1 <- matrix(random_points[mod((1:L)-1,5)+1],L,1)
+    write.table(five_periodic1, file = paths[3], row.names=FALSE, col.names=FALSE)
+    
+    ### 5-periodic pattern random points + pertubation
+    pertubation <- rnorm(5)
+    random_pointsPert <- random_points + 0.2 * pertubation
+    random_pointsPert <- 1.8*(random_pointsPert-min(random_pointsPert))/(max(random_pointsPert)-min(random_pointsPert))-0.9;
+    five_periodic2 <- matrix(random_pointsPert[mod((1:L)-1,5)+1],L,1)
+    write.table(five_periodic2, file = paths[4], row.names=FALSE, col.names=FALSE)
+  }
+  
+  sin1 <- as.matrix(read.table(paths[1]))
+  sin2 <- as.matrix(read.table(paths[2]))
+  five_periodic1 <- as.matrix(read.table(paths[3]))
+  five_periodic2 <- as.matrix(read.table(paths[4]))
+  patterns <- list('sin 8.83'=sin1, 'sin 9.83'=sin2, 
+                   '5-periodic'=five_periodic1, '5-periodic+pertubation'=five_periodic2)
+  
+  return(patterns)
+}
+
+patterns <- createExamplePatterns(generate_new_data=T, L=2000,folder_path="./codes")
+n_points <- sapply(patterns, FUN = function(x) dim(x)[1]) # length of each pattern
+
+y <- length(patterns[[1]])
+
+all_training_output <- c()
+R <- list()

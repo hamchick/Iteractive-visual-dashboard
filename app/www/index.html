@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<link href="shared/shiny.min.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
+<script src="lib/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="lib/plotly-binding-4.9.3/plotly.js"></script>
+<link href="lib/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="lib/datatables-binding-0.18/datatables.js"></script>
+<link href="lib/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="lib/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="lib/bootstrap-3.4.1/accessibility/css/bootstrap-accessibility.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.4.1/accessibility/js/bootstrap-accessibility.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="lib/myown-1.0.0/css/mystyle.css" rel="stylesheet" />
+<script src="lib/myown-1.0.0/js/myscript.js"></script>
+  <title>Data Visualization by Shiny</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Data Visualization by Shiny</h2>
+    <div class="col-sm-4">
+      <form class="well" role="complementary">
+        <div class="form-group shiny-input-container" style="width:200px;">
+          <label class="control-label" id="varible1-label" for="varible1">Choose a varible1 (x axis):</label>
+          <div>
+            <select id="varible1"><optgroup label="Discrete">
+<option value="CONTRACT_TYPE" selected>CONTRACT_TYPE</option>
+<option value="CODE_GENDER">CODE_GENDER</option>
+<option value="FLAG_OWN_CAR">FLAG_OWN_CAR</option>
+<option value="FLAG_OWN_REALTY">FLAG_OWN_REALTY</option>
+</optgroup>
+<optgroup label="Continuous">
+<option value="CNT_CHILDREN">CNT_CHILDREN</option>
+<option value="AMT_INCOME_TOTAL">AMT_INCOME_TOTAL</option>
+<option value="AMT_CREDIT">AMT_CREDIT</option>
+<option value="AMT_ANNUITY">AMT_ANNUITY</option>
+</optgroup>
+<optgroup label="Target">
+<option value="TARGET">TARGET</option>
+</optgroup></select>
+            <script type="application/json" data-for="varible1" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4">
+      <form class="well" role="complementary">
+        <div class="form-group shiny-input-container" style="width:200px;">
+          <label class="control-label" id="varible2-label" for="varible2">Choose a varible2 (y axis):</label>
+          <div>
+            <select id="varible2"><optgroup label="Discrete">
+<option value="CONTRACT_TYPE" selected>CONTRACT_TYPE</option>
+<option value="CODE_GENDER">CODE_GENDER</option>
+<option value="FLAG_OWN_CAR">FLAG_OWN_CAR</option>
+<option value="FLAG_OWN_REALTY">FLAG_OWN_REALTY</option>
+</optgroup>
+<optgroup label="Continuous">
+<option value="CNT_CHILDREN">CNT_CHILDREN</option>
+<option value="AMT_INCOME_TOTAL">AMT_INCOME_TOTAL</option>
+<option value="AMT_CREDIT">AMT_CREDIT</option>
+<option value="AMT_ANNUITY">AMT_ANNUITY</option>
+</optgroup>
+<optgroup label="Target">
+<option value="TARGET">TARGET</option>
+</optgroup></select>
+            <script type="application/json" data-for="varible2" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-8" role="main">
+      <div id="distPlot" style="width:100%; height:400px; " class="plotly html-widget html-widget-output shiny-report-size shiny-report-theme"></div>
+    </div>
+    <div class="col-sm-8" role="main">
+      <div id="mytable" style="width:100%; height:auto; " class="datatables html-widget html-widget-output"></div>
+    </div>
+  </div>
+</body>
+</html>

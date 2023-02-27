@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1630034745472.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3715496983",
+    "id" : "737E2D04",
+    "lastKnownWriteTime" : 1627193498,
+    "last_content_update" : 1627193498,
+    "path" : "C:/Users/Ham/Desktop/github/econDV-app/copy/server.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

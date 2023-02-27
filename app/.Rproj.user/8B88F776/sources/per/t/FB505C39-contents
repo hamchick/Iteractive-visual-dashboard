@@ -1,0 +1,47 @@
+ty <- matrix(10, ncol = 1, nrow = 10)
+ey <- matrix(5, ncol = 1, nrow = 1)
+tx <- matrix(5, ncol = 2, nrow = 10)
+ex <- matrix(1, ncol = 2, nrow = 1)
+h <- c(1,1)
+
+
+kk <- function(g) (1/sqrt(2*pi))*exp(-0.5*g^2)
+llls <- function(ty,tx,h,ey,ex){
+  
+  n <- length(ty)
+  ne <- length(ey)
+  q <- ncol(tx)
+  q1 <- q+1
+  ones <- rep(1,n)
+  thetahat <- matrix(0,ncol=ne,nrow=q1)
+  
+  for(e in 1:ne){
+    
+    K <- matrix(0, ncol=n, nrow=n)
+    fi <- matrix(0, ncol = q, nrow = n)
+    x <- matrix(0, ncol=q, nrow=n)
+    
+    for (i in 1:n) {
+      x[i, ] <- tx[i, ] - ex[e, ]
+    }
+    
+    for (j in 1:q) {
+      
+      fi[, j] <- x[, j]/h[j]
+      kfi <- kk(fi)
+    }
+    
+    for (k in 1:n) {
+      K[k, k] <- prod(kfi[k, ])
+    }
+    
+    X <- cbind(ones, x)
+    
+    #thetahat[, e] <- solve(t(X)%*%K%*%X)%*%t(X)%*%K%*%ty
+  }
+  
+  return(kfi)
+}
+
+
+llls(ty=ty, tx=tx, ey=ey, ex=ex, h=h)

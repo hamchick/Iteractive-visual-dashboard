@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1639988314346.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "677332056",
+    "id" : "10F45F9",
+    "lastKnownWriteTime" : 1640445347,
+    "last_content_update" : 1640445347209,
+    "path" : "C:/Users/Ham/Desktop/github/econDV-app/myEcon/app/testing concepter.R",
+    "project_path" : "testing concepter.R",
+    "properties" : {
+        "cursorPosition" : "35,51",
+        "scrollLine" : "17",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

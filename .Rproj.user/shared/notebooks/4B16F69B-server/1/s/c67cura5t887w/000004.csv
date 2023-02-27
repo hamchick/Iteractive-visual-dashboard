@@ -1,0 +1,41 @@
+"0",""
+"0"," output_distPlot <-  {"
+"0","    ggplot(data=sample)"
+"0"," }"
+"0","  "
+"0","  input = ""AMT_ANNUITY"""
+"0","  input2 = ""CONTRACT_TYPE"""
+"0","  select1<-select(sample,input)"
+"2","Note: Using an external vector in selections is ambiguous.
+[34mi[39m Use `all_of(input)` instead of `input` to silence this message.
+[34mi[39m See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+[90mThis message is displayed once per session.[39m
+"
+"0","  select2<-select(sample,input2)"
+"2","Note: Using an external vector in selections is ambiguous.
+[34mi[39m Use `all_of(input2)` instead of `input2` to silence this message.
+[34mi[39m See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+[90mThis message is displayed once per session.[39m
+"
+"0","if (is.character(select1)) {"
+"0","    if (is.character(select2)){"
+"0","       output_distPlot <- output_distPlot + geom_count("
+"0","         aes(x=get(input), y = get(input2))"
+"0","       )"
+"0","    } else {"
+"0","       output_distPlot <- output_distPlot + geom_col("
+"0","         aes(x=get(input), y = get(input2))"
+"0","       )"
+"0","    }"
+"0","} else {"
+"0","    if (is.character(select2)){"
+"0","       output_distPlot <- output_distPlot + geom_col("
+"0","         aes(x=get(input), y = get(input2))"
+"0","       )"
+"0","    }else{"
+"0","       output_distPlot <- output_distPlot + geom_smooth("
+"0","         aes(x=get(input), y = get(input2))"
+"0","       )"
+"0","    }"
+"0","}"
+"0",""

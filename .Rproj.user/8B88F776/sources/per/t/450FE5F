@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1630118206841.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3214948742",
+    "id" : "450FE5F",
+    "lastKnownWriteTime" : 1630118203,
+    "last_content_update" : 1630118203,
+    "path" : "C:/Users/Ham/Desktop/github/econDV-app/myEcon/app/app.R",
+    "project_path" : "app/app.R",
+    "properties" : {
+        "cursorPosition" : "11,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

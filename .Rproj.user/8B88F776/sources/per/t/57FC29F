@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1627191594134.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3194053696",
+    "id" : "57FC29F",
+    "lastKnownWriteTime" : 1630118778,
+    "last_content_update" : 1630118778036,
+    "path" : "C:/Users/Ham/Desktop/github/econDV-app/myEcon/app/app - 複製.R",
+    "project_path" : "app/app - 複製.R",
+    "properties" : {
+        "cursorPosition" : "214,10",
+        "scrollLine" : "188"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

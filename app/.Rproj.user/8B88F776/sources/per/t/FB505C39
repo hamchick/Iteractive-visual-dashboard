@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1641924204141.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1685140054",
+    "id" : "FB505C39",
+    "lastKnownWriteTime" : 1641925166,
+    "last_content_update" : 1641925166580,
+    "path" : "C:/Users/Ham/Desktop/soft.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "24,6",
+        "scrollLine" : "4",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

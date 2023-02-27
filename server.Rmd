@@ -1,0 +1,99 @@
+---
+drake_cache: '.server123'
+---
+
+```{r makecondition}
+library(econR)
+library(shiny)
+library(ggplot2)
+library(plotly)
+library(DT)
+sample <- read.csv(. %//% "support/SampleData.csv")
+sample$TARGET = as.character(sample$TARGET)
+```
+
+```{r}
+library(dplyr)
+appSystem <- get_currentRmd()
+appSystem <- check_yaml(appSystem)
+appSystem %>%
+  check_Rproject()
+```
+
+## Input 
+
+```{r makecondition_input}
+input_bins = 30
+input = "AMT_ANNUITY"
+input2 = "CONTRACT_TYPE"
+input_varible1 = input
+input_varible2 = input2
+```
+
+
+## input
+
+```{r select1}
+select1<-select(sample,input_varible1)
+```
+
+
+```{r select2}
+select2<-select(sample,input_varible2)
+```
+
+
+## Output rendering
+
+  * must have `render_outputId` and `output_outputId` objects.
+  
+  * `render_outputId` has render function as its value, which will be used to generate proper server.R
+
+```{r render_distPlot}
+render_distPlot <- plotly::renderPlotly
+```
+
+
+```{r output_distPlot}
+output_distPlot <- {
+  
+  if (is.character(select1[1,1])) {
+      if (is.character(select2[1,1])){
+        plotOutcome <- ggplot(data = sample) + geom_count(
+          aes(x=get(input_varible1), y = get(input_varible2))
+        )
+      } else {
+        plotOutcome <- ggplot(data = sample) + geom_col(
+          aes(x=get(input_varible1), y = get(input_varible2))
+        )
+      }
+    } else {
+      if (is.character(select2[1,1])){
+        plotOutcome <- ggplot(data = sample) + geom_col(
+          aes(x=get(input_varible1), y = get(input_varible2))
+        )
+      }else{
+        plotOutcome <- ggplot(data = sample) + geom_smooth(
+          aes(x=get(input_varible1), y = get(input_varible2))
+        )
+      }
+    }
+  plotly::ggplotly(plotOutcome) 
+}
+```
+
+
+```{r render_mytable}
+render_mytable <- renderDT
+
+```
+
+```{r output_mytable}
+output_mytable <- {
+    sample
+  }
+```
+
+
+
+
